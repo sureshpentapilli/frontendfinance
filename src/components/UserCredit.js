@@ -14,7 +14,7 @@ const UserCreditTable = () => {
     const fetchCredits = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/auth/mycredit",
+          "https://backendfinance-ofpv.onrender.com/auth/mycredit",
           {
             headers: {
               Authorization: `Bearer ${token}`, // Pass token in Authorization header
