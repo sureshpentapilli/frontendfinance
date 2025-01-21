@@ -19,7 +19,7 @@ const NewOrder = () => {
   useEffect(() => {
     const fetchVendors = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/auth/vendors", {
+        const response = await axios.get("https://backendfinance-ofpv.onrender.com/auth/vendors", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -72,7 +72,7 @@ const NewOrder = () => {
       }
 
       const response = await axios.post(
-        "http://localhost:5000/auth/createorder",
+        "https://backendfinance-ofpv.onrender.com/auth/createorder",
         orderForm,
         {
           headers: {
