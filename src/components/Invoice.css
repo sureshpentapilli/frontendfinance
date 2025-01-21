@@ -1,0 +1,46 @@
+.invoice-dashboard-bg {
+    background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0.644)), url('../../public/images/admindashboard.jpg'); /* Replace with your actual image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh; /* Ensure the background covers the full viewport height */
+  }
+
+  /* Only target buttons in the Invoice component */
+.invoice-dashboard-bg .btn.btn-primary.btn-sm {
+    background-color: green !important;
+    border-color: green !important;
+    color: white !important;
+    transition: background-color 0.3s ease;
+  }
+  
+  .invoice-dashboard-bg .btn.btn-primary.btn-sm:hover {
+    background-color: darkgreen !important;
+    border-color: darkgreen !important;
+  }
+
+  /* Button styling */
+.download-button {
+  display: flex;
+  align-items: center; /* Align icon and text vertically */
+  justify-content: center; /* Center content horizontally */
+  gap: 8px; /* Add space between icon and text */
+  padding: 8px 12px; /* Add padding for better click area */
+  background-color: green !important;
+  border-color: green !important;
+  color: white !important;
+  font-size: 14px; /* Adjust font size for text */
+  transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: darkgreen !important;
+  border-color: darkgreen !important;
+}
+
+/* Icon styling */
+.download-icon {
+  font-size: 28px; /* Increase icon size */
+}
+
+  

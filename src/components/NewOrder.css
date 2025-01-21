@@ -1,0 +1,64 @@
+/* Vendor Name Styling */
+.vendor-name {
+    color: rgb(201, 94, 94); /* Blue for the name */
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-transform: capitalize;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .vendor-name:hover {
+    color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Vendor Details Styling */
+  .vendor-details {
+    color: #6c757d; /* Subtle gray for details */
+    font-size: 1rem;
+    line-height: 1.5;
+    text-transform: none;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .vendor-details:hover {
+    color: #343a40; /* Dark gray on hover */
+  }
+  
+  /* Card Hover Effect */
+  .card {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Button Styling */
+  .btn-success {
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 6px rgba(0, 128, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+    box-shadow: 0 6px 10px rgba(0, 128, 0, 0.3);
+  }
+
+  .order-dashboard-bg {
+    background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0.644)), url('../../public/images/admindashboard1.jpg'); /* Replace with your actual image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh; /* Ensure the background covers the full viewport height */
+  }
+  

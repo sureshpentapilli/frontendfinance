@@ -1,0 +1,15 @@
+.orderplaced-dashboard-bg {
+    background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.438), rgba(0, 0, 0, 0.479)), url('../../public/images/admindashboard2.jpg'); /* Replace with your actual image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh; /* Ensure the background covers the full viewport height */
+  }
+  .order-details p.info {
+    color: blue; /* Replace 'blue' with your desired color */
+    font-weight: bold;
+  }
+  .order-details p {
+    color: rgba(0, 0, 255, 0.397); /* Replace 'blue' with your desired color */
+  }
+  
