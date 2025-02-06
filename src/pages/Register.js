@@ -31,7 +31,7 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post('https://backendfinance-ofpv.onrender.com/auth/register', formData, {
+      const response = await axios.post('https://backendcheck-hlpb.onrender.com/auth/register', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
