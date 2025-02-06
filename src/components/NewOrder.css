@@ -62,3 +62,53 @@
     min-height: 100vh; /* Ensure the background covers the full viewport height */
   }
   
+
+  .vendor-card {
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #ffffff;
+  }
+  
+  .vendor-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .vendor-logo {
+    /* width: 100px; */
+    height: 100px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .vendor-logo:hover {
+    transform: scale(1.1);
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .text-muted {
+    font-size: 14px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  

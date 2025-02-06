@@ -18,7 +18,7 @@ const Login = () => {
       const response = await axios.post('http://localhost:5000/auth/login', { email, password });
       localStorage.setItem('userToken', response.data.token);
       alert('Login successful');
-      navigate('/dashboard'); // Navigate to dashboard
+      navigate('/dashboard/neworder'); // Navigate to dashboard
     } catch (err) {
       if (err.response && err.response.status === 403) {
         setError('Your registration is not approved by the admin.');

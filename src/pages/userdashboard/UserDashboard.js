@@ -1,39 +1,53 @@
-import React, { useState } from "react";
-import { Link, Outlet, useNavigate } from "react-router-dom";
-import { FaClipboardList, FaShoppingCart, FaFileInvoice, FaPlus } from "react-icons/fa"; // Importing icons
-import { Collapse } from "react-bootstrap"; // For the toggle effect
+import React, { useState, useEffect } from "react";
+import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
+import { useUser } from "../context/UserContext";
+
+import {
+  FaClipboardList,
+  FaShoppingCart,
+  FaFileInvoice,
+  FaPlus,
+  FaClipboardCheck,
+} from "react-icons/fa";
+import { Collapse } from "react-bootstrap";
 
 const UserDashboard = () => {
-  const [open, setOpen] = useState(true); // Sidebar is open by default
-  const [bgColor, setBgColor] = useState("bg-light"); // Default background color for the user dashboard
+  const { vendorId, setVendorId, userId, setUserId } = useUser();
+  const params = useParams();
+  
+  const navigate = useNavigate();
+  const [open, setOpen] = useState(true);
+  const [bgColor, setBgColor] = useState("bg-light");
 
-  const navigate = useNavigate(); // Hook to navigate programmatically
+  useEffect(() => {
+    console.log("UserDashboard Params:", params.vendorId, params.userId);
+    if (params.vendorId && params.userId) {
+      console.log("Setting Vendor ID:", params.vendorId);
+      console.log("Setting User ID:", params.userId);
+      setVendorId(params.vendorId);
+      setUserId(params.userId);
+    }
+  }, [params.vendorId, params.userId]);
 
   const handleSidebarToggle = () => {
-    setOpen(!open); // Toggle the sidebar open/close
-    setBgColor(open ? "bg-light" : "bg-primary"); // Change background color on toggle
+    setOpen(!open);
+    setBgColor(open ? "bg-light" : "bg-primary");
   };
 
   const handleLogout = () => {
-    // Remove the token from localStorage
     localStorage.removeItem("userToken");
-
-    // Redirect to the login page
-    navigate("/login"); // Change "/login" to your actual login route
+    navigate("/login");
   };
 
   return (
     <div className="d-flex">
-      {/* Sidebar */}
-      <div className={`sidebar ${bgColor}`} style={{ width: "250px",height:"100vh", paddingTop: "20px" }}>
+      <div
+        className={`sidebar ${bgColor}`}
+        style={{ width: "250px", height: "100vh", paddingTop: "20px" }}
+      >
         <div className="sidebar-header text-center">
           <h4>User Dashboard</h4>
-          <button
-            className="btn btn-dark mt-2"
-            onClick={handleSidebarToggle}
-            aria-controls="sidebar-links"
-            aria-expanded={open}
-          >
+          <button className="btn btn-dark mt-2" onClick={handleSidebarToggle}>
             {open ? "Close Sidebar" : "Open Sidebar"}
           </button>
         </div>
@@ -56,27 +70,30 @@ const UserDashboard = () => {
             </li>
             <li>
               <Link to="neworder" className="text-dark d-block py-2 px-3">
-                <FaPlus /> New Order
+                <FaPlus /> Vendors
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={`/dashboard/vendor/${vendorId}/user/${userId}/responses`}
+                className="text-dark d-block py-2 px-3"
+              >
+                <FaClipboardCheck /> History
               </Link>
             </li>
           </ul>
         </Collapse>
       </div>
-
-      {/* Main Content */}
       <main className="flex-grow-1">
-      
         <button
           onClick={handleLogout}
           className="btn btn-danger position-fixed top-1 end-0 m-4"
         >
           Logout
         </button>
-
         <Outlet />
       </main>
     </div>
   );
 };
-
 export default UserDashboard;
