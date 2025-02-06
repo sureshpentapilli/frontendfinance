@@ -37,7 +37,7 @@ const NewOrder = () => {
               <div className="card h-100 shadow-sm vendor-card">
                 <div className="card-body d-flex flex-column align-items-center text-center">
                   <img
-                    src={`http://localhost:5000${vendor.vendorlogo}`}
+                    src={`https://backendcheck-hlpb.onrender.com${vendor.vendorlogo}`}
                     alt="Vendor Logo"
                     className="vendor-logo"
                     onClick={() => navigate(`/dashboard/questions/${vendor._id}`)}
