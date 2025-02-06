@@ -10,7 +10,7 @@ const OrderPlaced = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get("https://backendfinance-ofpv.onrender.com/auth/getorder", {
+        const response = await axios.get("https://backendcheck-hlpb.onrender.com/auth/getorder", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
