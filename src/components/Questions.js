@@ -18,7 +18,7 @@ const Questions = () => {
     const fetchVendorDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/auth/vendor/${vendorId}`,
+          `https://backendcheck-hlpb.onrender.com/auth/vendor/${vendorId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -63,7 +63,7 @@ const Questions = () => {
       const userId = decodedToken.userId;
 
       await axios.post(
-        "http://localhost:5000/auth/submit-responses",
+        "https://backendcheck-hlpb.onrender.com/auth/submit-responses",
         {
           vendorId,
           userId,
