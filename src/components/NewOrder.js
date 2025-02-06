@@ -13,9 +13,7 @@ const NewOrder = () => {
     const fetchVendors = async () => {
       try {
         const response = await axios.get("http://localhost:5000/auth/vendors", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+          headers: { Authorization: `Bearer ${token}` },
         });
         console.log("response", response.data);
         setVendors(response.data);
@@ -26,60 +24,6 @@ const NewOrder = () => {
 
     fetchVendors();
   }, [token]);
-
-  // Handle Input Change
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setOrderForm((prevForm) => ({
-      ...prevForm,
-      [name]: value,
-    }));
-  };
-
-  // Open Modal and Set Vendor ID
-  const openModal = (vendorId) => {
-    setOrderForm((prevForm) => ({
-      ...prevForm,
-      vendorId,
-    }));
-    setIsModalOpen(true);
-  };
-
-  // Close Modal
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setOrderForm({
-      vendorId: "",
-      numberOfUsers: "",
-      yearsOfSupport: "",
-      existingVendor: "",
-      buyingPeriod: "",
-    });
-  };
-
-  // Post Order
-  const handleOrderNow = async () => {
-    try {
-      if (!orderForm.vendorId) {
-        alert("Please select a vendor");
-        return;
-      }
-
-      const response = await axios.post(
-        "http://localhost:5000/auth/createorder",
-        orderForm,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      alert("Order placed successfully!");
-      closeModal();
-    } catch (error) {
-      console.error("Error placing order:", error.response?.data || error.message);
-    }
-  };
 
   return (
     <div className="order-dashboard-bg">
