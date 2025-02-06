@@ -36,7 +36,7 @@ const AnswerStatus = () => {
     try {
       const token = localStorage.getItem("userToken");
       const response = await axios.get(
-        `http://localhost:5000/auth/vendor/${vendorId}/user/${userId}/responses`,
+        `https://backendcheck-hlpb.onrender.com/auth/vendor/${vendorId}/user/${userId}/responses`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setVendor(response.data.vendor);
