@@ -12,7 +12,7 @@ const NewOrder = () => {
   useEffect(() => {
     const fetchVendors = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/auth/vendors", {
+        const response = await axios.get("https://backendcheck-hlpb.onrender.com/auth/vendors", {
           headers: { Authorization: `Bearer ${token}` },
         });
         console.log("response", response.data);
